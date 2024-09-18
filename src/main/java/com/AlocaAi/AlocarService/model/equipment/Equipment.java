@@ -16,29 +16,21 @@ public class Equipment {
 
     public String status;
 
-    public String type;
+    public String tipo;
     
-    public String name;
+    public String serial;
 
-    @ManyToMany(mappedBy = "equipment", cascade = CascadeType.ALL )
+    @ManyToMany(mappedBy = "equipment")
     List<Reservation> reservations;
 
     
     public Equipment() {}
 
-    public Equipment(Long id, String status, String type, String name) {
-        this.id = id;
+    public Equipment(Long equipamentoId, String status, String tipo, String serial) {
+        this.id = equipamentoId;
         this.status = status;
-        this.type = type;
-        this.name = name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+        this.tipo = tipo;
+        this.serial = serial;
     }
 
     public String getStatus() {
@@ -49,20 +41,12 @@ public class Equipment {
         this.status = status;
     }
 
-    public String getType() {
-        return type;
+    public Long getId() {
+        return id;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public List<Reservation> getReservations() {
@@ -71,5 +55,21 @@ public class Equipment {
 
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getSerial() {
+        return serial;
+    }
+
+    public void setSerial(String serial) {
+        this.serial = serial;
     }
 }

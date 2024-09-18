@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.AlocaAi.AlocarService.model.Resevation.Reservation;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
@@ -12,18 +11,22 @@ import jakarta.persistence.ManyToMany;
 @Entity
 public class User {
     @Id
-    Long id;
+    public Long id;
 
 
-    @ManyToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    public String email;
+
+
+    @ManyToMany(mappedBy = "user")
     List<Reservation> reservations;
 
 
     public User() {
     }
 
-    public User(Long id) {
+    public User(Long id, String email) {
         this.id = id;
+        this.email = email;
     }
 
 

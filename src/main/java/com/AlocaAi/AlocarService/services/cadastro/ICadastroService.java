@@ -3,8 +3,10 @@ package com.AlocaAi.AlocarService.services.cadastro;
 import java.util.List;
 
 import com.AlocaAi.AlocarService.model.equipment.Equipment;
+import com.AlocaAi.AlocarService.model.user.User;
 
 public interface ICadastroService {
     public List<Equipment> listEquipment();
-    public Equipment updateEquipment(Long equipmentId, String status);
+    
+    public User getUser(Long id);
 }

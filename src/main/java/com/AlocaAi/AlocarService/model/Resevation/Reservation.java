@@ -19,12 +19,12 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "equipment_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "equipment_id", nullable = false )
     private Equipment equipment;
 
     Date  startDate;
@@ -35,12 +35,12 @@ public class Reservation {
 
     public Reservation() {}
 
-    public Reservation(Long id, Equipment equipment, User user, Date startDate, Date endDate) {
-        this.id = id;
+    public Reservation(Equipment equipment, User user, Date startDate, Date endDate) {
         this.equipment = equipment;
         this.user = user;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.status = "open";
     }
 
     public Long getId() {

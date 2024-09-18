@@ -25,7 +25,7 @@ public class GoogleCalendarAuth {
     
     public static Credential getCredentials() throws IOException, GeneralSecurityException {
         InputStream in = GoogleCalendarAuth.class.getResourceAsStream("/credentials.json");
-        System.out.println("carregoua stream de credentials");
+        System.out.println("carregou stream de credentials");
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
         System.out.println("carregoua o secret");
 

@@ -68,12 +68,10 @@ public class GoogleCalendarService implements ICalendarService {
     public CalendarEvent saveEvent(String title, String description, Date startDate, Date endDate) {
         try {
           Credential credential = GoogleCalendarAuth.getCredentials();
-          System.out.println("pegou a credential");
           Calendar service = new Calendar.Builder(
           GoogleNetHttpTransport.newTrustedTransport(), GoogleCalendarAuth.JSON_FACTORY, credential)
           .setApplicationName(GoogleCalendarAuth.APPLICATION_NAME)
           .build();
-          System.out.println("gerou o service");
 
             EventDateTime eventStartDate = new EventDateTime().setDate(new DateTime(startDate));  
             EventDateTime eventEndDate = new EventDateTime().setDate(new DateTime(endDate));  
