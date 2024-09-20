@@ -24,7 +24,6 @@ public class ReservationJPARepository implements IReservationRepository {
             userDAO.save(reservation.getUser());
         }
 
-
         Equipment equipment = equipamentDAO.findById(reservation.getEquipment().getId()).orElse(null);
         if(equipment == null) {
             equipamentDAO.save(reservation.getEquipment());

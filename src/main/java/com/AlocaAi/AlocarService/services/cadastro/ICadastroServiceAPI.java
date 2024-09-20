@@ -41,4 +41,8 @@ public interface ICadastroServiceAPI {
 
     @GetMapping(value = "/usuario/{id}", produces = "*/*")
 	ResponseEntity<UserWithouId> getUser (@PathVariable("id") Long id);
+
+
+    @PatchMapping(value = "/equipamento", produces = "*/*")
+	Equipment updateEquiment (@RequestBody InputUpdateEquipment input);
 }

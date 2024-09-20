@@ -23,4 +23,9 @@ public class CadastroService implements ICadastroService{
         if(user == null) {return null;}
         return new User(id, user.email);
     }
+
+    public Equipment updateEquipment(Long id, String status) {
+         return  serviceAPI.updateEquiment(new InputUpdateEquipment(id, status));
+    }
+
 }

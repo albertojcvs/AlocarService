@@ -48,6 +48,7 @@ public class ReservationController {
 
         this.reservationCollection.createReservation(reservation);
 
+        this.cadastroService.updateEquipment(userId, description);
         return reservation;
     }
 }
